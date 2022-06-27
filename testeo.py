@@ -6,4 +6,4 @@ if z >= 0 :
     print('tu resultado es ', z)
 else :
     print('tu valor es negativo ', z)
-print('fin de la operacion')
+print('fin')
