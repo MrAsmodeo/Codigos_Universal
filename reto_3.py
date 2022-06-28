@@ -1,32 +1,32 @@
 # solucion Reto 3 
 
 #entradas
-N= int(input())        
-bicicletas = []         
+x= int(input())        
+bike_x = []         
 
 #proceso
 
-for i in range(N):     
-  bicicletas.append(input().split())
+for i in range(x):     
+  bike_x.append(input().split())
 
 #funcion para calcular entre los rangos requeridos 
 
-def calcular():
-  precios = []
-  for i in bicicletas:
+def calculate():
+  prices = []
+  for i in bike_x:
     if int (i[0]) >= 240 and int(i[0]) <= 300 \
     and int(i[1]) >= 160 and int(i[1]) <= 180 \
     and int(i[2]) >= 240 and int (i[2]) <= 275 \
     and int(i[3]) <= 50:
 
-      precios.append(int(i[4]))
+      prices.append(int(i[4]))
 
-  return  precios
+  return  prices
 
-resultado = calcular()
+result = calculate()
 
-if len(resultado) ==0:
+if len(result) ==0:
   print("NO DISPONIBLE")
 else:
-  for i in resultado:
+  for i in result:
     print(i)
