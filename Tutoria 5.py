@@ -2,4 +2,4 @@
 
 #creacion de diccionarios 
 diccionario = { 1: 'Manzana','A':154, True:184, 'Azul':198.2}
-diccionario
+print(diccionario)
