@@ -1,5 +1,8 @@
 #tutoria Reto 5 
 #reto final 
+from logging import basicConfig
+
+
 productos = {
     1: ["Manzanas", 5000.0, 25],
     2: ["Limones", 2300.0, 15], 
@@ -77,7 +80,12 @@ def valor_inventario(base_datos):
     inventario += base_datos[i][2] * base_datos[i][1]
   return inventario 
 
-def imprimir_valores():
+def imprimir_valores(base_datos):
+    precioM = precio_mayor(base_datos)
+    preciom = precio_menor(base_datos)
+    promediov = round(promedio(base_datos),1)
+    inventario = round(valor_inventario(base_datos),1)
+    print(precioM, preciom, promediov, inventario)
 
 operacion, producto = leer_datos()
 
@@ -89,5 +97,5 @@ elif operacion == 'AGREGAR':
   bandera = agregar(productos, producto)
 
 if bandera == True :
-  precio_mayor(productos)
+  imprimir_valores(productos)
 else:print('ERROR')
