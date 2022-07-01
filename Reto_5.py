@@ -1,7 +1,4 @@
 #reto final 
-from logging import basicConfig
-
-
 productos = {
     1: ["Manzanas", 5000.0, 25],
     2: ["Limones", 2300.0, 15], 
