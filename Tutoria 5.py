@@ -12,20 +12,20 @@ productos = {
     9: ["Chocolates", 3500.0, 80], 
     10:["Jamon", 15000.0, 10]
 }
+
 def leer_datos (): 
   operacion = input()
   producto =input().split()
-  print(producto)
   producto[0] = int(producto[0])
   producto[2] = float(producto[2])
   producto[3] = int (producto[3])
-
+  print(producto)
   return operacion, producto
 
-def agregar(base_datos,producto):
-  if producto [0] in base_datos:
+def agregar(base_datos, producto):
+  if producto[0] in base_datos:
     return False
-  else : 
+  else: 
     codigo = producto[0]
     producto.pop(0)
     base_datos[codigo] = producto
@@ -37,7 +37,7 @@ def actualizar(base_datos, producto):
     producto.pop(0)
     base_datos[codigo] = producto
     return True
-  else :
+  else:
     return False
 
 
@@ -56,6 +56,29 @@ def precio_mayor (base_datos):
       mayor = i
   return base_datos[mayor][0]
 
+def precio_menor (base_datos):
+  menor = list(base_datos.keys())
+  menor = menor[0]
+  for i in base_datos:
+    if base_datos[i][1] < base_datos[menor][1]:
+      menor = i
+  return base_datos[menor][0]
+
+def promedio(base_datos):
+  promediov = 0 
+  for i in base_datos:
+    promediov += base_datos[i][1]
+  promediov = promediov/ len(base_datos)
+  return promediov
+
+def valor_inventario(base_datos):
+  inventario = 0
+  for i in base_datos:
+    inventario += base_datos[i][2] * base_datos[i][1]
+  return inventario 
+
+def imprimir_valores():
+
 operacion, producto = leer_datos()
 
 if operacion == 'ACTUALIZAR':
@@ -66,6 +89,5 @@ elif operacion == 'AGREGAR':
   bandera = agregar(productos, producto)
 
 if bandera == True :
-  print(productos)
-  print(producto)
+  precio_mayor(productos)
 else:print('ERROR')
