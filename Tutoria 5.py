@@ -22,7 +22,6 @@ def leer_datos ():
   producto[0] = int(producto[0])
   producto[2] = float(producto[2])
   producto[3] = int (producto[3])
-  print(producto)
   return operacion, producto
 
 def agregar(base_datos, producto):
@@ -96,6 +95,6 @@ elif operacion =='BORRAR':
 elif operacion == 'AGREGAR':
   bandera = agregar(productos, producto)
 
-if bandera == True :
+if bandera == True:
   imprimir_valores(productos)
 else:print('ERROR')
