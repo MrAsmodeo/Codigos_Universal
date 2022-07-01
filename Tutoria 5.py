@@ -1,4 +1,3 @@
-#tutoria Reto 5 
 #reto final 
 from logging import basicConfig
 
